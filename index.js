@@ -12,27 +12,23 @@ const monster = {
   health: 10,
   diceCount: 1,
 };
+function getDiceHtml(diceCount) {
+  return getDiceRollArray(diceCount)
+    .map((num) => {
+      return `<div class="dice">${num}</div>`;
+    })
+    .join("");
+}
 
 function getDiceRollArray(diceCount) {
-  let arrOfNumbers = [];
-  for (let i = 0; i < diceCount; i++) {
-    arrOfNumbers.push(Math.floor(Math.random() * 6) + 1);
+  return new Array(diceCount).fill(0).map(() => {
+    return Math.floor(Math.random() * 6) + 1;
+  });
 }
-return arrOfNumbers;
-}
-
-function getDiceHtml(diceCount){
-  return getDiceRollArray(diceCount).map((num)=>{
-      return `<div class="dice">${num}</div>`
-  }).join("")
-   
-}
-
 
 function renderCharacter(data) {
   const { elementId, name, avatar, health, diceCount } = data; //Destructuring data from both objects above.
-  const diceHtml = getDiceHtml(diceCount)
-
+  const diceHtml = getDiceHtml(diceCount);
 
   document.getElementById(
     `${elementId}`
