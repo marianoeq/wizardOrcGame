@@ -198,9 +198,6 @@ button {
 
 button:focus { outline: 0 }
 
-#restart-button {
-  display: none;
-}
 
 .end-game{
   margin-top: 25%;
