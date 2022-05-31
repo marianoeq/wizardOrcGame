@@ -27,7 +27,7 @@ function endGame() {
   const endEmoji = wizard.health > 0 ? "🔮" : "☠️";
 
   const endMessage =
-    wizard.health > 0 && orc.health === 0
+    wizard.health === 0 && orc.health === 0
       ? `No victors - all creatures are dead ${endEmoji}`
       : wizard.health > 0
       ? `The Wizard Wins ${endEmoji}`
