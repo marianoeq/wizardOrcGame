@@ -2,7 +2,10 @@ html, body {
   padding: 0;
   margin: 0;    
   background: rgb(51,43,55);
-  background: radial-gradient(circle, rgba(51,43,55,1) 0%, rgba(51,43,55,1) 100%);
+  background-image: url("./images/galaxyBack.jpg");
+  background-repeat:none;
+  background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -194,6 +197,10 @@ button {
 
 
 button:focus { outline: 0 }
+
+#restart-button {
+  display: none;
+}
 
 .end-game{
   margin-top: 25%;
